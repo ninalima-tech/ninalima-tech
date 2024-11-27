@@ -1,0 +1,25 @@
+
+const calculosMatematicos = {
+    fatorial: (num) => {
+      if (num === 0 || num === 1) {
+        return 1;
+      } else {
+        return num * calculosMatematicos.fatorial(num - 1);
+      }
+    },
+  
+    fibonacci: (num) => {
+      const sequencia = [0, 1];
+      for (let i = 2; i <= num; i++) {
+        sequencia.push(sequencia[i - 1] + sequencia[i - 2]);
+      }
+      return sequencia;
+    }
+  };
+  
+  const numero = 10;
+  const resultadoFatorial = calculosMatematicos.fatorial(numero);
+  const sequenciaFibonacci = calculosMatematicos.fibonacci(numero);
+  
+  console.log(`O fatorial de ${numero} é: ${resultadoFatorial}`);
+  console.log(`A sequência de Fibonacci até ${numero} é: ${sequenciaFibonacci}`);
